@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Merriweather_Sans } from "next/font/google";
-import "./globals.css";
-import HomeNav from "./components/HomeNav";
+import "@/app/globals.css";
+import HomeNav from "@/app/components/HomeNav";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
