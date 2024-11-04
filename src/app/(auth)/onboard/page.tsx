@@ -94,74 +94,86 @@ export default function OnboardPage() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold">
-          Complete your profile
-        </h2>
-      </div>
+      <div>
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h2 className="mt-6 text-center text-3xl font-bold text-foreground font-fredoka">
+            Complete your profile
+          </h2>
+        </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          {/* Avatar */}
-          <div className="flex justify-center">
-            <Image
-              src={formData.avatar_url}
-              alt="Profile"
-              width={96}
-              height={96}
-              className="rounded-full"
-            />
-          </div>
-
-          {/* Name */}
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Name
-            </label>
-            <div className="mt-1">
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                className="appearance-none block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm"
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="py-8 px-4 bg-foreground shadow-xl sm:rounded-lg sm:px-10 gap-4 flex flex-col">
+            {/* Avatar */}
+            <div className="flex justify-center">
+              <Image
+                src={formData.avatar_url}
+                alt="Profile"
+                width={96}
+                height={96}
+                className="rounded-full"
               />
             </div>
-          </div>
 
-          {/* Email */}
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium">
-              Email
-            </label>
-            <div className="mt-1">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                className="appearance-none block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm"
-              />
+            {/* Name */}
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-background font-merriweather-sans"
+              >
+                Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="appearance-none text-lg text-background block w-full bg-foreground px-3 py-2 border-background border-b-2 shadow-sm focus:outline-none sm:text-sm focus:border-accent transition-colors duration-300"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm font-medium"
-              onClick={handleSubmit}
-            >
-              Complete Profile
-            </button>
+            {/* Email */}
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-background font-merriweather-sans"
+              >
+                Email
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="appearance-none text-lg text-background block w-full bg-foreground px-3 py-2 border-background border-b-2 shadow-sm focus:outline-none sm:text-sm focus:border-accent transition-colors duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-bold font-merriweather-sans text-foreground bg-background hover:bg-accent transition-colors duration-300"
+                onClick={handleSubmit}
+              >
+                Create Profile
+              </button>
+            </div>
+            <div className="text-xs text-center text-background font-merriweather-sans font-thin">
+              Your GitHub account is connected to your Formify account.
+              You&apos;ll use your GitHub login to access your account!
+            </div>
           </div>
         </div>
       </div>

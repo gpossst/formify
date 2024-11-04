@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <div className="h-full flex flex-col items-center">
           <div className="absolute top-10">
-            <Logo size={100} />
+            <Logo size={60} clickable={true} />
           </div>
           <div>{children}</div>
         </div>

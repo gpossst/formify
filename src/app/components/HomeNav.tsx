@@ -10,8 +10,8 @@ function HomeNav() {
   return (
     <div className="flex text-foreground justify-between items-center p-4 font-merriweather-sans absolute top-0 w-full">
       <div className="flex gap-4 items-center">
-        <div className="cursor-pointer" onClick={() => router.push("/")}>
-          <Logo size={50} />
+        <div className="">
+          <Logo size={50} clickable={true} />
         </div>
         <div
           className="cursor-pointer text-lg font-semibold"
